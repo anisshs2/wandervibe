@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Highlight - Nomadic Paths</title>
+
+    <!-- SEO Meta Tags (will be updated dynamically) -->
+    <meta name="description" id="meta-description" content="Explore travel highlights and discover amazing destinations around the world with Nomadic Paths.">
+    <meta name="keywords" id="meta-keywords" content="travel highlights, adventure travel, mountain adventures, beach destinations, cultural heritage">
+    <meta name="author" content="Nomadic Paths">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" id="og-url" content="https://nomadic-paths.web.app/">
+    <meta property="og:title" id="og-title" content="Travel Highlights - Nomadic Paths">
+    <meta property="og:description" id="og-description" content="Explore travel highlights and discover amazing destinations.">
+    <meta property="og:image" id="og-image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" id="twitter-url" content="https://nomadic-paths.web.app/">
+    <meta property="twitter:title" id="twitter-title" content="Travel Highlights - Nomadic Paths">
+    <meta property="twitter:description" id="twitter-description" content="Explore travel highlights and discover amazing destinations.">
+    <meta property="twitter:image" id="twitter-image" content="">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" id="canonical-url" href="https://nomadic-paths.web.app/">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .highlight-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .highlight-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
+        .highlight-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .highlight-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .highlight-detail {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        .detail-section {
+            margin-bottom: 4rem;
+        }
+        .detail-section h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .detail-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        .destinations-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .destination-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .destination-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .destination-item h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><h2>Nomadic Paths</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#destinations" class="nav-link">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#highlights" class="nav-link">Highlights</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#stories" class="nav-link">Stories</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="highlight-hero" id="hero">
+        <div class="highlight-hero-content">
+            <h1 class="highlight-title" id="highlight-title">Loading...</h1>
+        </div>
+    </section>
+
+    <!-- Detail Content -->
+    <div class="highlight-detail">
+        <a href="index.html#highlights" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Highlights
+        </a>
+
+        <div class="detail-section">
+            <h2>Overview</h2>
+            <div id="highlight-content"></div>
+        </div>
+
+        <div class="detail-section">
+            <h2>Featured Destinations</h2>
+            <div id="destinations-list" class="destinations-list"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Nomadic Paths</h3>
+                    <p>Inspiring wanderers to explore the world, one story at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="index.html#destinations">Destinations</a></li>
+                            <li><a href="index.html#highlights">Highlights</a></li>
+                            <li><a href="index.html#stories">Travel Stories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nomadic Paths. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA2Q9OTZeXnghMcF10NfB6CA1-zB2Ob3Ts",
+            authDomain: "nomadic-paths.firebaseapp.com",
+            projectId: "nomadic-paths",
+            storageBucket: "nomadic-paths.firebasestorage.app",
+            messagingSenderId: "896374897637",
+            appId: "1:896374897637:web:8cb82988f95d6bcaa7cd0c",
+            measurementId: "G-WBFTHKCYYF"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Get highlight ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const highlightId = urlParams.get('id');
+
+        if (highlightId) {
+            loadHighlight(highlightId);
+        } else {
+            window.location.href = 'index.html#highlights';
+        }
+
+        async function loadHighlight(id) {
+            try {
+                const docRef = doc(db, 'highlights', id);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    const pageUrl = `https://nomadic-paths.web.app/highlight.html?id=${id}`;
+
+                    // Set hero background
+                    document.getElementById('hero').style.backgroundImage = `url(${data.imageUrl})`;
+
+                    // Set title
+                    document.getElementById('highlight-title').textContent = data.title;
+
+                    // Update SEO meta tags
+                    const metaTitle = `${data.title} - Best Destinations & Travel Guide | Nomadic Paths`;
+                    const metaDesc = data.fullDescription ? data.fullDescription.substring(0, 160) : data.description;
+
+                    document.getElementById('page-title').textContent = metaTitle;
+                    document.title = metaTitle;
+                    document.getElementById('meta-description').setAttribute('content', metaDesc);
+                    document.getElementById('meta-keywords').setAttribute('content', `${data.title.toLowerCase()}, travel, destinations, adventure`);
+
+                    // Open Graph tags
+                    document.getElementById('og-url').setAttribute('content', pageUrl);
+                    document.getElementById('og-title').setAttribute('content', metaTitle);
+                    document.getElementById('og-description').setAttribute('content', metaDesc);
+                    document.getElementById('og-image').setAttribute('content', data.imageUrl);
+
+                    // Twitter tags
+                    document.getElementById('twitter-url').setAttribute('content', pageUrl);
+                    document.getElementById('twitter-title').setAttribute('content', metaTitle);
+                    document.getElementById('twitter-description').setAttribute('content', metaDesc);
+                    document.getElementById('twitter-image').setAttribute('content', data.imageUrl);
+
+                    // Canonical URL
+                    document.getElementById('canonical-url').setAttribute('href', pageUrl);
+
+                    // Set content
+                    const contentDiv = document.getElementById('highlight-content');
+                    if (data.fullDescription) {
+                        contentDiv.innerHTML = `<p>${data.fullDescription}</p>`;
+                    } else {
+                        contentDiv.innerHTML = `<p>${data.description}</p>`;
+                    }
+
+                    // Set featured destinations
+                    const destinationsList = document.getElementById('destinations-list');
+                    if (data.featuredDestinations && data.featuredDestinations.length > 0) {
+                        destinationsList.innerHTML = data.featuredDestinations.map(dest =>
+                            `<div class="destination-item">
+                                <h3>${dest.name}</h3>
+                                <p>${dest.description}</p>
+                            </div>`
+                        ).join('');
+                    } else {
+                        destinationsList.innerHTML = '<p>Featured destinations coming soon...</p>';
+                    }
+
+                } else {
+                    alert('Highlight not found');
+                    window.location.href = 'index.html#highlights';
+                }
+            } catch (error) {
+                console.error('Error loading highlight:', error);
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

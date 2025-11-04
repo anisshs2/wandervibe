@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Destination - Nomadic Paths</title>
+
+    <!-- SEO Meta Tags (will be updated dynamically) -->
+    <meta name="description" id="meta-description" content="Discover amazing travel destinations and plan your perfect adventure with Nomadic Paths travel guides.">
+    <meta name="keywords" id="meta-keywords" content="travel destination, travel guide, adventure travel, vacation planning">
+    <meta name="author" content="Nomadic Paths">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" id="og-url" content="https://nomadic-paths.web.app/">
+    <meta property="og:title" id="og-title" content="Travel Destination Guide - Nomadic Paths">
+    <meta property="og:description" id="og-description" content="Discover amazing travel destinations and plan your perfect adventure.">
+    <meta property="og:image" id="og-image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" id="twitter-url" content="https://nomadic-paths.web.app/">
+    <meta property="twitter:title" id="twitter-title" content="Travel Destination Guide - Nomadic Paths">
+    <meta property="twitter:description" id="twitter-description" content="Discover amazing travel destinations and plan your perfect adventure.">
+    <meta property="twitter:image" id="twitter-image" content="">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" id="canonical-url" href="https://nomadic-paths.web.app/">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .destination-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .destination-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+        }
+        .destination-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+        .destination-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .destination-tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+        .destination-detail {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+        .detail-section {
+            margin-bottom: 4rem;
+        }
+        .detail-section h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .detail-section h3 {
+            font-size: 1.8rem;
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .detail-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        .itinerary {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+        .itinerary h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .itinerary-item {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+        .itinerary-item::before {
+            content: '✈';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-size: 1.2rem;
+        }
+        .back-btn {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        .back-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><h2>Nomadic Paths</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#destinations" class="nav-link">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#highlights" class="nav-link">Highlights</a>
+                </li>
+                <li class="nav-item">
+                    <a href="index.html#stories" class="nav-link">Stories</a>
+                </li>
+            </ul>
+            <div class="nav-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="destination-hero" id="hero">
+        <div class="destination-hero-content">
+            <h1 class="destination-title" id="dest-title">Loading...</h1>
+            <p class="destination-tagline" id="dest-tagline"></p>
+        </div>
+    </section>
+
+    <!-- Detail Content -->
+    <div class="destination-detail">
+        <a href="index.html#destinations" class="back-btn">
+            <i class="fas fa-arrow-left"></i> Back to Destinations
+        </a>
+
+        <div class="detail-section">
+            <h2>About This Destination</h2>
+            <div id="dest-description"></div>
+        </div>
+
+        <div class="detail-section">
+            <h2>Travel Itineraries</h2>
+
+            <div class="itinerary">
+                <h3><i class="fas fa-calendar-day"></i> 1-Day Itinerary</h3>
+                <div id="itinerary-1day"></div>
+            </div>
+
+            <div class="itinerary">
+                <h3><i class="fas fa-calendar-week"></i> 2-Day Itinerary</h3>
+                <div id="itinerary-2day"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Nomadic Paths</h3>
+                    <p>Inspiring wanderers to explore the world, one story at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="index.html#destinations">Destinations</a></li>
+                            <li><a href="index.html#highlights">Highlights</a></li>
+                            <li><a href="index.html#stories">Travel Stories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">YouTube</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nomadic Paths. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA2Q9OTZeXnghMcF10NfB6CA1-zB2Ob3Ts",
+            authDomain: "nomadic-paths.firebaseapp.com",
+            projectId: "nomadic-paths",
+            storageBucket: "nomadic-paths.firebasestorage.app",
+            messagingSenderId: "896374897637",
+            appId: "1:896374897637:web:8cb82988f95d6bcaa7cd0c",
+            measurementId: "G-WBFTHKCYYF"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Get destination ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const destId = urlParams.get('id');
+
+        if (destId) {
+            loadDestination(destId);
+        } else {
+            window.location.href = 'index.html#destinations';
+        }
+
+        async function loadDestination(id) {
+            try {
+                const docRef = doc(db, 'destinations', id);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    const pageUrl = `https://nomadic-paths.web.app/destination.html?id=${id}`;
+
+                    // Set hero background
+                    document.getElementById('hero').style.backgroundImage = `url(${data.imageUrl})`;
+
+                    // Set title and tagline
+                    document.getElementById('dest-title').textContent = data.name;
+                    document.getElementById('dest-tagline').textContent = data.tagline || '';
+
+                    // Update SEO meta tags
+                    const metaTitle = `${data.name} Travel Guide 2025 - Itineraries & Tips | Nomadic Paths`;
+                    const metaDesc = data.tagline ? `${data.tagline}. ${data.description}` : data.description;
+
+                    document.getElementById('page-title').textContent = metaTitle;
+                    document.title = metaTitle;
+                    document.getElementById('meta-description').setAttribute('content', metaDesc);
+                    document.getElementById('meta-keywords').setAttribute('content', `${data.name}, ${data.tags ? data.tags.join(', ') : ''}, travel guide, itinerary, vacation`);
+
+                    // Open Graph tags
+                    document.getElementById('og-url').setAttribute('content', pageUrl);
+                    document.getElementById('og-title').setAttribute('content', metaTitle);
+                    document.getElementById('og-description').setAttribute('content', metaDesc);
+                    document.getElementById('og-image').setAttribute('content', data.imageUrl);
+
+                    // Twitter tags
+                    document.getElementById('twitter-url').setAttribute('content', pageUrl);
+                    document.getElementById('twitter-title').setAttribute('content', metaTitle);
+                    document.getElementById('twitter-description').setAttribute('content', metaDesc);
+                    document.getElementById('twitter-image').setAttribute('content', data.imageUrl);
+
+                    // Canonical URL
+                    document.getElementById('canonical-url').setAttribute('href', pageUrl);
+
+                    // Set description
+                    const descDiv = document.getElementById('dest-description');
+                    if (data.fullDescription) {
+                        descDiv.innerHTML = `<p>${data.fullDescription}</p>`;
+                    } else {
+                        descDiv.innerHTML = `<p>${data.description}</p>`;
+                    }
+
+                    // Set itineraries
+                    const itinerary1 = document.getElementById('itinerary-1day');
+                    if (data.itinerary1Day) {
+                        itinerary1.innerHTML = data.itinerary1Day.map(item =>
+                            `<div class="itinerary-item">${item}</div>`
+                        ).join('');
+                    } else {
+                        itinerary1.innerHTML = '<p>Coming soon...</p>';
+                    }
+
+                    const itinerary2 = document.getElementById('itinerary-2day');
+                    if (data.itinerary2Day) {
+                        itinerary2.innerHTML = data.itinerary2Day.map(item =>
+                            `<div class="itinerary-item">${item}</div>`
+                        ).join('');
+                    } else {
+                        itinerary2.innerHTML = '<p>Coming soon...</p>';
+                    }
+
+                } else {
+                    alert('Destination not found');
+                    window.location.href = 'index.html#destinations';
+                }
+            } catch (error) {
+                console.error('Error loading destination:', error);
+            }
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
